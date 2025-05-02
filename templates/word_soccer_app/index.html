@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slovný futbal</title>
+    <!-- Option 1: Use Bulma from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Option 2: Use your own static file -->
+    {# <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"> #}
+
+    <link rel="stylesheet" href="{% static 'word_soccer_app/main.css' %}">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar is-primary">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <strong>Slovný futbal</strong>
+        </a>
+    </div>
+    <div class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item" href="#">Home</a>
+            <a class="navbar-item" href="#">About</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero is-link is-bold">
+    <div class="hero-body">
+        <p class="title">Welcome to Django + Bulma</p>
+        <p class="subtitle">This is a styled template using Bulma framework.</p>
+    </div>
+</section>
+
+<!-- Main Content -->
+<section class="section">
+    <div class="container">
+
+        <div class="block stadium">
+
+        </div>
+
+        <div class="columns letters">
+            <div class="column">1</div>
+            <div class="column">2</div>
+            <div class="column">2</div>
+            <div class="column">4</div>
+            <div class="column">5</div>
+            <div class="column">6</div>
+            <div class="column">7</div>
+            <div class="column">8</div>
+            <div class="column">9</div>
+            <div class="column">10</div>
+            <div class="column">11</div>
+        </div>
+
+
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>&copy; 2025 My Django App. Made with Bulma ❤️</p>
+    </div>
+</footer>
+
+</body>
+</html>
