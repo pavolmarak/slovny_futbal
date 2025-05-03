@@ -8,8 +8,8 @@ div.letters{
     min-height: 100px;
 }
 
-div.letters .column{
-    border: 1px solid white;
+div.letters div.letter{
+    background-color: violet;
 }
 
 div.controls{
