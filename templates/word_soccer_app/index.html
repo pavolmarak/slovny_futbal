@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <title>Slovný futbal</title>
     <!-- Option 1: Use Bulma from CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
     <!-- Option 2: Use your own static file -->
     {# <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"> #}
 
@@ -36,36 +37,44 @@
     </div>
 </section>
 
-<!-- Main Content -->
-<section class="section">
+<!-- game area -->
+<section class="section gamearea">
     <div class="container">
-
-        <div class="block stadium">
-
+        <div class="columns is-centered">
+            <div class="column is-two-thirds stadium"></div>
         </div>
 
-        <div class="columns letters">
-            <div class="column">1</div>
-            <div class="column">2</div>
-            <div class="column">2</div>
-            <div class="column">4</div>
-            <div class="column">5</div>
-            <div class="column">6</div>
-            <div class="column">7</div>
-            <div class="column">8</div>
-            <div class="column">9</div>
-            <div class="column">10</div>
-            <div class="column">11</div>
+        <div class="columns is-centered">
+            <div class="column is-two-thirds letters">
+                <div class="columns ">
+                    <div class="column">1</div>
+                    <div class="column">2</div>
+                    <div class="column">2</div>
+                    <div class="column">4</div>
+                    <div class="column">5</div>
+                    <div class="column">6</div>
+                    <div class="column">7</div>
+                    <div class="column">8</div>
+                    <div class="column">9</div>
+                    <div class="column">10</div>
+                    <div class="column">11</div>
+                </div>
+            </div>
         </div>
 
-
+        <div class="columns is-centered">
+            <div class="column is-two-thirds controls">
+            </div>
+        </div>
     </div>
 </section>
+
+
 
 <!-- Footer -->
 <footer class="footer">
     <div class="content has-text-centered">
-        <p>&copy; 2025 My Django App. Made with Bulma ❤️</p>
+        <p>&copy; 2025 Slovný Futbal by Pavol Marák. Made with Bulma and Django ❤️</p>
     </div>
 </footer>
 

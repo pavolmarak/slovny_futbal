@@ -1,0 +1,18 @@
+div.stadium {
+    background-color: rgb(200,200,200);
+    min-height: 500px;
+}
+
+div.letters{
+    background-color: green;
+    min-height: 100px;
+}
+
+div.letters .column{
+    border: 1px solid white;
+}
+
+div.controls{
+    background-color: blue;
+    min-height: 80px;
+}
