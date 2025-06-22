@@ -1,18 +1,28 @@
-div.stadium {
+div.container{
     background-color: rgb(200,200,200);
+}
+
+div.stadium {
+    background-color: lightseagreen;
     min-height: 500px;
 }
 
 div.letters{
-    background-color: green;
-    min-height: 100px;
+    background-color: seashell;
 }
 
 div.letters div.letter{
-    background-color: violet;
+    background-color: lightblue;
+}
+
+div.letters div.letter div{
+    background-color: #359ec4;
 }
 
 div.controls{
-    background-color: blue;
-    min-height: 80px;
+    background-color: lightsalmon;
+}
+
+div.controls div.submit{
+    background-color: lightcoral;
 }
