@@ -47,42 +47,62 @@
             <div class="column is-two-thirds stadium"></div>
         </div>
 
+{#        word #}
+        <div class="columns is-centered">
+            <div id="word" class="column is-two-thirds word is-centered has-text-centered">
+            </div>
+        </div>
+
+{#        deleter #}
+        <div class="columns is-centered">
+            <div class="column is-two-thirds delete_box is-flex is-justify-content-center">
+                <div class="columns">
+                    <div class="column remover">
+                        <div id="remover" class="">Del slovo</div>
+                    </div>
+                    <div class="column deleter">
+                        <div id="deleter" class="">Del písmeno</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 {#        letters #}
         <div class="columns is-centered">
-            <div class="column is-two-thirds letters">
+            <div class="column is-two-thirds is-flex is-justify-content-center letters">
                 <div class="columns">
                     <div class="column letter">
-                        <div class="">1</div>
+                        <div id="l1" class="let">R</div>
                     </div>
                     <div class="column letter">
-                        <div class="">2</div>
+                        <div id="l2" class="let">A</div>
                     </div>
                     <div class="column letter">
-                        <div class="">3</div>
+                        <div id="l3" class="let">B</div>
                     </div>
                     <div class="column letter">
-                        <div class="">4</div>
+                        <div id="l4" class="let">S</div>
                     </div>
                     <div class="column letter">
-                        <div class="">5</div>
+                        <div id="l5" class="let">A</div>
                     </div>
                     <div class="column letter">
-                        <div class="">6</div>
+                        <div id="l6" class="let">L</div>
                     </div>
                     <div class="column letter">
-                        <div class="">7</div>
+                        <div id="l7" class="let">Q</div>
                     </div>
                     <div class="column letter">
-                        <div class="">8</div>
+                        <div id="l8" class="let">Z</div>
                     </div>
                     <div class="column letter">
-                        <div class="">9</div>
+                        <div id="l9" class="let">Č</div>
                     </div>
                     <div class="column letter">
-                        <div class="">10</div>
+                        <div id="l10" class="let">Ľ</div>
                     </div>
                     <div class="column letter">
-                        <div class="">11</div>
+                        <div id="l11" class="let">P</div>
                     </div>
                 </div>
             </div>
@@ -91,9 +111,8 @@
 {#        controls #}
         <div class="columns is-centered">
             <div class="column is-two-thirds controls">
-                <div class="columns">
-                     <div class="column is-one-fifth has-text-centered cancel">Zrušiť</div>
-                    <div class="column is-offset-one-fifth is-one-fifth has-text-centered submit">Potvrdiť</div>
+                <div class="columns is-centered">
+                    <div class="column is-one-fifth has-text-centered submit">Potvrdiť</div>
                 </div>
             </div>
         </div>
@@ -109,5 +128,7 @@
     </div>
 </footer>
 
+
+<script src="{% static 'word_soccer_app/scripts.js' %}"></script>
 </body>
 </html>

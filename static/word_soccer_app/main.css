@@ -7,16 +7,50 @@ div.stadium {
     min-height: 500px;
 }
 
+div.word{
+    min-height: 3em;
+    background-color: red;
+    font-size: 1.6em;
+}
+
+div.delete_box{
+    min-height: 2em;
+    background-color: purple;
+}
+
+div.delete_box div.remover div{
+    white-space: nowrap;
+    background-color: #c45b35;
+    padding: 0.2em;
+    cursor: pointer;
+}
+
+
+div.delete_box div.deleter div{
+    white-space: nowrap;
+    background-color: #99c66f;
+    padding: 0.2em;
+    cursor: pointer;
+}
+
 div.letters{
     background-color: seashell;
 }
-
 div.letters div.letter{
     background-color: lightblue;
+    padding: 0.4em;
 }
 
 div.letters div.letter div{
     background-color: #359ec4;
+    width: 1.8em;
+    height: 1.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    margin: 0 0.0em;
+    cursor: pointer;
 }
 
 div.controls{
@@ -25,4 +59,5 @@ div.controls{
 
 div.controls div.submit{
     background-color: lightcoral;
+    cursor: pointer;
 }
