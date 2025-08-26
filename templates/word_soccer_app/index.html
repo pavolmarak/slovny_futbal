@@ -112,10 +112,48 @@
         <div class="columns is-centered">
             <div class="column is-two-thirds controls">
                 <div class="columns is-centered">
-                    <div class="column is-one-fifth has-text-centered submit">Potvrdiť</div>
+                    <div id="submit_word" class="column is-one-fifth has-text-centered submit">
+                        <form id="myForm" method="post" action="find/">
+                            {% csrf_token %}
+                            <button type="submit">Potvrdiť</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div id="response"></div>
+
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function (e) {
+                e.preventDefault(); // Prevent default form submission
+
+                const word = document.getElementById('word');
+                const formData = new FormData(this);
+                formData.append('word', word.textContent);
+
+                fetch("find/", {
+                    method: "POST",
+                    body: formData,
+                    headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    },
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if(data.result === 'present'){
+                            word.textContent = "";
+                            document.querySelectorAll('.let').forEach(one_letter => {
+                                one_letter.style.backgroundColor = "#359ec4";
+                            });
+                        }
+                        document.getElementById('response').innerText = data.result;
+                    })
+                    .catch(error => console.error("Error:", error));
+            });
+        </script>
+
+
     </div>
 </section>
 

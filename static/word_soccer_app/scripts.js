@@ -2,14 +2,18 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     // Get elements
-    const targetDiv = document.getElementById('word');
+    const wordDiv = document.getElementById('word');
     const deleterDiv = document.getElementById('deleter');
     const removerDiv = document.getElementById('remover');
+    const submitWord = document.getElementById('submit_word');
 
 
-    document.querySelectorAll('.let').forEach(element => {
-        element.addEventListener('click', function () {
-            targetDiv.textContent += element.textContent;
+    document.querySelectorAll('.let').forEach(one_letter => {
+        one_letter.addEventListener('click', function () {
+            if(one_letter.style.backgroundColor !== "red"){
+                wordDiv.textContent += one_letter.textContent;
+                one_letter.style.backgroundColor = "red";
+            }
         });
     });
 
@@ -21,6 +25,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     removerDiv.addEventListener('click', function () {
         document.getElementById('word').textContent = '';
+
+        document.querySelectorAll('.let').forEach(one_letter => {
+            one_letter.style.backgroundColor = "#359ec4";
+         });
+    });
+
+    submitWord.addEventListener('click', function () {
+        const word = document.getElementById('word');
+
     });
 
 
