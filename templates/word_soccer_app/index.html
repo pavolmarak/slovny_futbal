@@ -44,7 +44,7 @@
 
 {#        stadium #}
         <div class="columns is-centered">
-            <div class="column is-one-fifth player1_panel">Player 1</div>
+            <div id="player1_panel" class="column is-one-fifth player1_panel">Player 1<br></div>
             <div class="column is-three-fifths stadium">
                 <div class="columns" style="color: white;">Player 1</div>
                 <div class="columns player1_points">
@@ -96,7 +96,7 @@
                     <div class="column is-1-21"></div>
                 </div>
             </div>
-            <div class="column is-one-fifth player2_panel">Player 2</div>
+            <div id="player2_panel" class="column is-one-fifth player2_panel">Player 2<br></div>
         </div>
 
 {#        word #}
@@ -192,7 +192,10 @@
                 })
                     .then(response => response.json())
                     .then(data => {
+                        const p1_panel = document.getElementById('player1_panel');
+                        p1_panel.innerHTML += word.textContent;
                         if(data.result === 'present'){
+                            p1_panel.innerHTML += " ...OK";
                             word.textContent = "";
                             document.querySelectorAll('.let').forEach(one_letter => {
                                 one_letter.style.backgroundColor = "#359ec4";
@@ -202,6 +205,7 @@
                                 localStorage.setItem("order_in_word", JSON.stringify(new_order_in_word));
                             }
                         }
+                        p1_panel.innerHTML += "<br>";
                         document.getElementById('response').innerText = data.result;
                     })
                     .catch(error => console.error("Error:", error));

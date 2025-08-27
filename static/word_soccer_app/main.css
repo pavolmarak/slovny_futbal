@@ -3,12 +3,13 @@ div.container{
 }
 
 div.player1_panel {
+    height: 500px;
     background-color: #570808;
     overflow-y: auto;
 }
 
-
 div.player2_panel {
+    height: 500px;
     background-color: slategray;
     overflow-y: auto;
 }
@@ -16,7 +17,7 @@ div.player2_panel {
 div.stadium {
     background: url("/static/word_soccer_app/grass.jpg");
     background-repeat: repeat;
-    min-height: 500px;
+    height: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
