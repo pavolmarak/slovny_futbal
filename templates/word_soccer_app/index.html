@@ -145,6 +145,10 @@
                             document.querySelectorAll('.let').forEach(one_letter => {
                                 one_letter.style.backgroundColor = "#359ec4";
                             });
+                            if (localStorage.getItem("order_in_word") !== null) {
+                                let new_order_in_word = new Array(11).fill(-1)
+                                localStorage.setItem("order_in_word", JSON.stringify(new_order_in_word));
+                            }
                         }
                         document.getElementById('response').innerText = data.result;
                     })

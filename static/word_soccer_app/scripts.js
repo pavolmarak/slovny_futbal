@@ -10,12 +10,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let order_in_word;
 
     if (localStorage.getItem("order_in_word") !== null) {
+        order_in_word = JSON.parse(localStorage.getItem("order_in_word")) || [];
+    } else {
         order_in_word = new Array(11).fill(-1)
         localStorage.setItem("order_in_word", JSON.stringify(order_in_word));
-    } else {
-        order_in_word = JSON.parse(localStorage.getItem("order_in_word")) || [];
     }
 
+    // kliknutie na pismeno
     document.querySelectorAll('.let').forEach(one_letter => {
         one_letter.addEventListener('click', function () {
             if(one_letter.style.backgroundColor !== "red"){
@@ -27,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // vymazanie 1 pismena
     deleterDiv.addEventListener('click', function () {
         const div = document.getElementById('word');
         let idx = order_in_word.indexOf(div.textContent.length-1);
@@ -35,17 +37,16 @@ document.addEventListener('DOMContentLoaded', function () {
         div.textContent = div.textContent.slice(0, -1);
     });
 
+    // vymazanie celeho slova
     removerDiv.addEventListener('click', function () {
         document.getElementById('word').textContent = '';
+        order_in_word.fill(-1);
         document.querySelectorAll('.let').forEach(one_letter => {
             one_letter.style.backgroundColor = "#359ec4";
          });
-    });
-
-    submitWord.addEventListener('click', function () {
-        const word = document.getElementById('word');
 
     });
 
-
+    // aktualizacia premennej 'order_in_word' v localstorage
+    localStorage.setItem("order_in_word", JSON.stringify(order_in_word));
 });
