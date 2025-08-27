@@ -1,10 +1,33 @@
 div.container{
-    background-color: rgb(200,200,200);
+    /*background-color: rgb(200,200,200);*/
+}
+
+div.player1_panel {
+    background-color: #570808;
+    overflow-y: auto;
+}
+
+
+div.player2_panel {
+    background-color: slategray;
+    overflow-y: auto;
 }
 
 div.stadium {
-    background-color: lightseagreen;
+    background: url("/static/word_soccer_app/grass.jpg");
+    background-repeat: repeat;
     min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div.stadium div.is-1-21{
+    flex: none;
+    width: calc(100% / 21);
+    background-color: #045e0b;
+    border: 1px solid rgb(0, 197, 33);
+    opacity: 0.7;
 }
 
 div.word{
@@ -24,7 +47,6 @@ div.delete_box div.remover div{
     padding: 0.2em;
     cursor: pointer;
 }
-
 
 div.delete_box div.deleter div{
     white-space: nowrap;
@@ -59,5 +81,8 @@ div.controls{
 
 div.controls div.submit{
     background-color: lightcoral;
+}
+
+div.controls div.submit form button{
     cursor: pointer;
 }
