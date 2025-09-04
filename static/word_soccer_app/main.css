@@ -4,7 +4,7 @@ div.container{
 
 div.player1_panel {
     height: 500px;
-    background-color: #570808;
+    background-color: #decae5;
     overflow-y: auto;
 }
 
@@ -33,13 +33,13 @@ div.stadium div.is-1-21{
 
 div.word{
     min-height: 3em;
-    background-color: red;
+    background-color: #b5e4b3;
     font-size: 1.6em;
 }
 
 div.delete_box{
     min-height: 2em;
-    background-color: purple;
+    background-color: #c5bb97;
 }
 
 div.delete_box div.remover div{

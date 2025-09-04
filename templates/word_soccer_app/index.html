@@ -42,7 +42,7 @@
 <section class="section gamearea">
     <div class="container">
 
-{#        stadium #}
+{#        stadium with player panels #}
         <div class="columns is-centered">
             <div id="player1_panel" class="column is-one-fifth player1_panel">Player 1<br></div>
             <div class="column is-three-fifths stadium">
@@ -104,7 +104,7 @@
             <div id="word" class="column is-three-fifths word is-centered has-text-centered"></div>
         </div>
 
-{#        deleter #}
+{#        deleters #}
         <div class="columns is-centered">
             <div class="column is-three-fifths delete_box is-flex is-justify-content-center">
                 <div class="columns">
@@ -159,7 +159,7 @@
             </div>
         </div>
 
-{#        controls #}
+{#        submit word #}
         <div class="columns is-centered">
             <div class="column is-three-fifths controls">
                 <div class="columns is-centered">
@@ -173,7 +173,7 @@
             </div>
         </div>
 
-        <div id="response"></div>
+        <div id="response" class="has-text-centered"></div>
 
         <script>
             document.getElementById('myForm').addEventListener('submit', function (e) {
@@ -181,6 +181,10 @@
 
                 const word = document.getElementById('word');
                 const formData = new FormData(this);
+                if(word.textContent.length < 2){
+                    alert('prazdne');
+                    return;
+                }
                 formData.append('word', word.textContent);
 
                 fetch("find/", {
