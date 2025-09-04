@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Slovný futbal</title>
     <!-- Option 1: Use Bulma from CDN -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
     <!-- Option 2: Use your own static file -->
     {# <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"> #}
@@ -42,7 +42,12 @@
 <section class="section gamearea">
     <div class="container">
 
-{#        stadium with player panels #}
+        {#        time panel #}
+        <div class="columns is-centered">
+            <div id="time_panel" class="column is-three-fifths has-text-centered time_panel is-size-5">1:30</div>
+        </div>
+        
+        {#        stadium with player panels #}
         <div class="columns is-centered">
             <div id="player1_panel" class="column is-one-fifth player1_panel">Player 1<br></div>
             <div class="column is-three-fifths stadium">
@@ -99,12 +104,12 @@
             <div id="player2_panel" class="column is-one-fifth player2_panel">Player 2<br></div>
         </div>
 
-{#        word #}
+        {#        word #}
         <div class="columns is-centered">
             <div id="word" class="column is-three-fifths word is-centered has-text-centered"></div>
         </div>
 
-{#        deleters #}
+        {#        deleters #}
         <div class="columns is-centered">
             <div class="column is-three-fifths delete_box is-flex is-justify-content-center">
                 <div class="columns">
@@ -118,7 +123,7 @@
             </div>
         </div>
 
-{#        letters #}
+        {#        letters #}
         <div class="columns is-centered">
             <div class="column is-three-fifths is-flex is-justify-content-center letters">
                 <div class="columns">
@@ -159,7 +164,7 @@
             </div>
         </div>
 
-{#        submit word #}
+        {#        submit word #}
         <div class="columns is-centered">
             <div class="column is-three-fifths controls">
                 <div class="columns is-centered">
@@ -178,11 +183,20 @@
         <script>
             document.getElementById('myForm').addEventListener('submit', function (e) {
                 e.preventDefault(); // Prevent default form submission
+                
+                // cannot submit word once timer elapsed
+                const t = JSON.parse(localStorage.getItem("time_in_seconds"));
+                if(t <= 0){
+                    alert('po limite');
+                    return;
+                }
 
                 const word = document.getElementById('word');
                 const formData = new FormData(this);
-                if(word.textContent.length < 2){
-                    alert('prazdne');
+                
+                // cannot submit short words
+                if (word.textContent.length < 2) {
+                    alert('kratke slovo');
                     return;
                 }
                 formData.append('word', word.textContent);
@@ -198,7 +212,7 @@
                     .then(data => {
                         const p1_panel = document.getElementById('player1_panel');
                         p1_panel.innerHTML += word.textContent;
-                        if(data.result === 'present'){
+                        if (data.result === 'present') {
                             p1_panel.innerHTML += " ...OK";
                             word.textContent = "";
                             document.querySelectorAll('.let').forEach(one_letter => {
@@ -219,7 +233,6 @@
 
     </div>
 </section>
-
 
 
 <!-- Footer -->
