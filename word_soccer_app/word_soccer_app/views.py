@@ -6,6 +6,8 @@ from word_soccer_app.word_soccer_app.models import Player, Word
 
 
 def home(request):
+    all_words = Word.objects.all()
+    all_words.delete()
     return render(request, 'word_soccer_app/index.html')
 
 
