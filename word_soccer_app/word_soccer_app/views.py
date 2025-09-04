@@ -14,8 +14,6 @@ def home(request):
 def find_word(request):
     if request.method == "POST" and request.headers.get('x-requested-with') == 'XMLHttpRequest':
         word = request.POST.get('word').strip()
-        new_word = Word(text=word,player_id=1)
-        new_word.save()
 
         # check if word is in the dictionary
         found = False
@@ -25,9 +23,15 @@ def find_word(request):
                 if line.strip().lower() == word.lower() and len(line.strip().lower()) > 1:
                     found = True
                     break
+        new_word = Word(text=word, player_id=1)
         if found:
+            new_word.is_in_dict = True
+            new_word.save()
             return JsonResponse({"result": "present"})
         else:
+            new_word.is_in_dict = False
+            new_word.save()
             return JsonResponse({"result": "not present"})
+
 
     return JsonResponse({"message": "Invalid request"}, status=400)
