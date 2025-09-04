@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'word_soccer_app'
+    'word_soccer_app.word_soccer_app'
 ]
 
 MIDDLEWARE = [

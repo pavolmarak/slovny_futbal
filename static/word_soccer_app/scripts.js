@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const deleterDiv = document.getElementById('deleter');
     const removerDiv = document.getElementById('remover');
     const submitWord = document.getElementById('submit_word');
-    let timeInSeconds = 5;
+    let timeInSeconds = 90;
     localStorage.setItem("time_in_seconds", JSON.stringify(timeInSeconds));
 
     let order_in_word;
