@@ -33,5 +33,9 @@ def find_word(request):
             new_word.save()
             return JsonResponse({"result": "not present"})
 
-
     return JsonResponse({"message": "Invalid request"}, status=400)
+
+
+def start_match(request):
+    
+    return render(request, 'word_soccer_app/index.html')

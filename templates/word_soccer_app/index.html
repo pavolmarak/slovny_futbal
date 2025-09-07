@@ -1,10 +1,21 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+        <!-- Option 1: Use Bulma from CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+
+    <!-- Option 2: Use your own static file -->
+    {# <link rel="stylesheet" href="{% static 'css/bulma.min.css' %}"> #}
+
+    <link rel="stylesheet" href="{% static 'word_soccer_app/main.css' %}">
 </head>
 <body>
 
+<a href="{% url 'start_match' %}">
+    <button>Start match</button>
+</a>
 </body>
 </html>
